@@ -1,0 +1,236 @@
+/*-----------------*/
+/*---           ---*/
+/*-----------------*/
+
+
+
+/*commentaire*/
+
+
+
+/* GENERAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.d-flex{display: flex;}
+
+h1{
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 0.8em;
+}
+
+h2{
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 0.8em;
+}
+
+h3{
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 0.8em;
+}
+
+h4{
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 0.8em;
+}
+	
+a{margin: 5px;}
+
+/* a{text-decoration: none;}
+li{list-style: none;} */
+
+
+	
+/* <!---------------------------- BODY ----------------------------> */
+
+body{
+    background:black;
+    color: greenyellow;
+    font-family: 'Raleway', sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+	border: solid 1px red;
+}
+
+/*<!------------------------------HEADER----------------> */
+
+/*<!--  logo (...)-->*/
+
+/*<!--  headernav (...)-->*/
+
+/*<!------------------------------MAIN----------------> */
+
+header{
+    padding: 20px;
+    justify-content: space-between;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+header p{
+    padding: 5px;
+    width: 50%;
+}
+header ul{
+    padding: 5px;
+    width: 50%;
+}
+
+h1{
+    padding: 20px;
+    border: solid 1px green;
+}
+
+.cardInfo{
+    height: auto;
+    /* width: 100%; */
+    background: rgb(121,189,117);
+    margin:20px;
+    border: solid 1px pink;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cardContainer{
+    background: rgb(121,189,117);
+    background: radial-gradient(circle, rgba(121,189,117,1) 14%, rgba(99,157,108,1) 55%, rgba(21,142,43,1) 100%); 
+	padding-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(13,auto);
+    grid-gap: 100px 2px ;
+    justify-content: center;
+    /* margin:100px auto; */
+}
+
+
+/* 6,35 cm x 8,89 cm ! R=1.4     695*965*/
+
+.card{
+    background-color: whitesmoke;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 140px;
+    width: 100px;
+    position: relative;
+    /* perspective: 500px;
+    transition: rotate 100ms ease-in-out;
+    transform-style: preserve-3d; */
+ 
+    /* margin: 5px; */
+}
+
+.card-back{
+    background-color:darksalmon;  
+    /* border-color: #ff6d00;  */
+    position: absolute;
+    backface-visibility: hidden;
+    /* perspective: 500px;
+    transform-style: preserve-3d;
+    transition: rotate 100ms ease-in-out; */
+
+
+}
+
+.card-front{
+    background-color:burlywood;  
+    /* border:solid 1px #333 ; */
+    position: absolute;
+    backface-visibility: hidden;
+    /* perspective: 500px;
+    transform-style: preserve-3d;
+    transition: rotate 100ms ease-in-out;
+    transform: rotateY(180deg); */
+ 
+
+}
+
+.card-number{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.card-number p{
+    /* padding: 10% 150% 10% 50%; */
+    padding: 2px 7px;
+    background-color: cornsilk;
+    color:crimson;
+    border-radius: 50%;
+
+}
+
+.card:active .card-back{
+    transform: rotateY(180deg);
+}
+
+.card:active .card-front{
+    transform: rotateY(0);
+}
+
+.card:active .card-number{
+    opacity: 0;;
+}
+
+/*<!------------------------------ FOOTER -------------------------------->*/
+
+footer{
+    padding: 20px;
+    justify-content: space-between;
+    width: 50%;
+    flex-wrap: wrap;
+    border: solid 1px green;
+    color: green;
+}
+
+footer a, footer p{
+    color: green;
+}
+
+/*________________________________responsive _______ @media___________________________________________*/
+
+
+
+@media all and (max-width: 1350px)
+ /* and (min-width:600px) */
+{
+    .cardContainer{
+        grid-template-columns: repeat(6,auto);
+    }
+    
+    /*general*/
+	/*header*/
+	/*main*/
+	/*footer*/
+}
+
+@media all and (max-width: 700px)
+{
+    .cardContainer{
+        grid-template-columns: repeat(4,auto);
+    }
+
+
+}
+
+@media all and (max-width: 400px)
+{
+    .cardContainer{
+        grid-template-columns: repeat(2,auto);
+        grid-gap: 40px 8px ;
+    }
+
+
+}
